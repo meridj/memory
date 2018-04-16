@@ -1,5 +1,6 @@
 import { newInlineStyle, shuffleArray } from '../utils/functions';
-import App from './App';
+import Launcher from './Launcher';
+
 /*
 **
 ** property like : this._property are private
@@ -9,7 +10,7 @@ import App from './App';
 export default class Game {
   constructor(gameMode, hightScores) {
     this._gameMode = gameMode;
-    this._hightScores = hightScores;
+    this._hightScores = hightScores || null;
     this._board = document.getElementsByClassName('board-game')[0];
     this._loaderWrapper = document.getElementById('loader-wrapper');
     this._loader = null;
@@ -60,7 +61,7 @@ export default class Game {
 
     retryButton.addEventListener('click', () => {
       newInlineStyle(result, 'display', 'none');
-      new App();
+      new Launcher();
     });
     clearTimeout(this._timeoutEndGame);
     if (isWin) {
@@ -69,7 +70,7 @@ export default class Game {
       resultMessage.textContent = 'Perdu !';
     }
     newInlineStyle(result, 'display', 'flex');
-    this._hightScores.updateHightScore({
+    this._hightScores.addHightScore({
       mode: this._gameMode.name,
       result: isWin ? 'Gagné' : 'Perdu',
       timeToWin: isWin ? `${this._timeToWinCpt}s` : '-'

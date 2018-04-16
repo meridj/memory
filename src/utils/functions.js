@@ -13,4 +13,12 @@ const shuffleArray = array => {
   });
 };
 
-export { newInlineStyle, shuffleArray };
+const setObj = function(key, obj) {
+  return localStorage.setItem(key, JSON.stringify(obj));
+};
+
+const getObj = function(key) {
+  return JSON.parse(localStorage.getItem(key));
+};
+
+export { newInlineStyle, shuffleArray, setObj, getObj };

@@ -1,7 +1,7 @@
 const mode = {
   easy: {
-    timeToWin: 30, // in second
-    intervalIncrementForLoader: 3.3333, // in percent
+    timeToWin: 60, // in second
+    intervalIncrementForLoader: 1.6666, // in percent
     mapX: 4,
     mapY: 4,
     name: 'easy'

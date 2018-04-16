@@ -1,13 +1,15 @@
+import { setObj, getObj } from '../utils/functions';
+
 export default class HightScore {
-  constructor() {
+  constructor(initialize) {
     this._table = document.getElementById('table');
     this._valuesToSave = [];
-    const partie = localStorage.getItem('partie');
+    this._savesValues = getObj('partie') || [];
 
-    console.log(partie);
+    if (initialize) this._createArrayWithSavesValues();
   }
 
-  updateHightScore(tableValues) {
+  addHightScore(tableValues) {
     const tableTr = document.createElement('tr');
 
     const mode = document.createElement('td');
@@ -17,22 +19,34 @@ export default class HightScore {
     mode.textContent = tableValues.mode;
     result.textContent = tableValues.result;
     timeToWin.textContent = tableValues.timeToWin;
-
     tableTr.appendChild(mode);
     tableTr.appendChild(result);
     tableTr.appendChild(timeToWin);
-
     this._table.appendChild(tableTr);
-    //console.log(localStorage);
     this._saveOnLocalStorage(tableValues);
   }
 
-  /*_saveOnLocalStorage(tableValues) {
-    const valueToSaveJSON = localStorage.getItem('partie');
+  _createArrayWithSavesValues() {
+    this._savesValues.forEach((elem, key) => {
+      const tableTr = document.createElement('tr');
+      const mode = document.createElement('td');
+      const result = document.createElement('td');
+      const timeToWin = document.createElement('td');
 
-    const valuesToSave = JSON.parse(valueToSaveJSON);
+      mode.textContent = elem.mode;
+      result.textContent = elem.result;
+      timeToWin.textContent = elem.timeToWin;
 
-    this._valuesToSave.push(valuesToSave);
-    localStorage.setItem('partie', JSON.stringify(this._valuesToSave));
-  }*/
+      tableTr.appendChild(mode);
+      tableTr.appendChild(result);
+      tableTr.appendChild(timeToWin);
+      this._table.appendChild(tableTr);
+    });
+  }
+
+  _saveOnLocalStorage(tableValues) {
+    console.log(this._savesValues);
+    const newStorage = [...this._savesValues, tableValues];
+    setObj('partie', newStorage);
+  }
 }
