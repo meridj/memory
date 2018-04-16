@@ -1,0 +1,233 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fafafa;
+  font-family: 'Montserrat', sans-serif;
+  user-select: none;
+}
+
+/* Header */
+header {
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5em;
+}
+/* End Header */
+
+/* Welcome */
+#welcome {
+  height: 20vh;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+#welcome h2 {
+  font-size: 1.5em;
+}
+
+#welcome div {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+#welcome div button {
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5em;
+  background: white;
+  border: 3px solid #615f5f;
+  outline: none;
+  transition: 0.2s;
+}
+
+#welcome div button:hover {
+  color: white;
+  background: #615f5f;
+  border: 3px solid #615f5f;
+}
+
+/* End Welcome */
+
+/* Board */
+.board-game {
+  background-color: #dedbfc;
+  padding: 1rem;
+  display: none;
+  grid-gap: 1rem;
+  justify-content: center;
+  transition: 2s;
+}
+/* End Board */
+
+/* Card */
+.carte {
+  transition: 0.2s;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+.cache {
+  background-color: #ababaa;
+  height: 100%;
+  width: 100%;
+}
+
+.image {
+  background-image: url('../assets/images/cards.png');
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  cursor: auto;
+  display: none;
+  -webkit-animation: rotate-vert-center 0.5s
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: rotate-vert-center 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both;
+}
+
+.carte:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+@-webkit-keyframes rotate-vert-center {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+@keyframes rotate-vert-center {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+/* End Card */
+
+/* Loader */
+#loader-wrapper {
+  position: relative;
+  margin-top: 3rem;
+  border: 1px solid red;
+  display: none;
+  width: 50%;
+  height: 5vh;
+}
+
+#loader-wrapper span {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+#loader {
+  height: 100%;
+  background-color: red;
+  width: 0%;
+  transition: 0.1s;
+  max-width: 100%;
+}
+
+#time-to-win {
+  position: absolute;
+}
+/* Loader */
+
+/* Result Game */
+#result-of-game {
+  height: 20vh;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem;
+  display: none;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+#result-of-game h2 {
+  font-size: 1.5em;
+}
+
+#result-of-game button {
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5em;
+  background: white;
+  border: 3px solid #615f5f;
+  outline: none;
+  transition: 0.2s;
+}
+
+#result-of-game button:hover {
+  color: white;
+  background: #615f5f;
+  border: 3px solid #615f5f;
+}
+/* EndResult Game */
+
+/* Hight Score */
+.table-wrapper {
+  position: fixed;
+  left: 2%;
+  top: 15%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.table-wrapper h2 {
+  padding: 0.5rem;
+  font-size: 1.5em;
+}
+
+table {
+  border: 1px solid #615f5f;
+}
+table th {
+  background-color: #615f5f;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #615f5f;
+  padding: 0.5rem;
+}
+table td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #615f5f;
+}
+/* End Score */
