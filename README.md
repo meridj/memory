@@ -1,3 +1,7 @@
+# What is it ?
+
+memory is a pure javascript game buuild with ES6/ES7 that permite to work around players memories.
+
 # To test locally
 
 ```
@@ -8,7 +12,7 @@ $ npm start
 
 A _web browser_ will open at : http://localhost:8080
 
-**memory games** is hosted here : https://gracious-meitner-a15f62.netlify.com/.
+**memory** is hosted here : https://gracious-meitner-a15f62.netlify.com/.
 
 # Rules
 
