@@ -1,6 +1,6 @@
 # What is it ?
 
-memory is a pure javascript game buuild with ES6/ES7 that permite to work around players memories.
+memory is a pure javascript game build with ES6/ES7 that permite to work around players memories.
 
 # To test locally
 
