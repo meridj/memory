@@ -22,6 +22,11 @@ A _web browser_ will open at : http://localhost:8080
 
 * Player win if he can discover all the pairs before the time runs out.
 
+# Todo
+
+* Responsive
+* Beautify Design
+*
 
 Have fun !
 
